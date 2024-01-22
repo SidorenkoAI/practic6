@@ -7,4 +7,3 @@ class task1:
             if i % 2 == 0:
                 evnum.append(i)
         return evnum
-
