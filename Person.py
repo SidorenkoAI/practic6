@@ -26,11 +26,11 @@ class Person:
 
     def GetFullName(self, year):
         if self.name == '':
-            print(f"Incognito, {year}")
+            return f"Incognito, {year}"
         if self.name[0] == '':
-            print(f"last_name with unknown first name, {year}")
+            return f"last_name with unknown first name, {year}"
         if self.name[1] == '':
-            print(f"first_name with unknown last name, {year}")
+            return f"first_name with unknown last name, {year}"
 
 
 
