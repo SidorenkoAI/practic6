@@ -6,7 +6,10 @@ class task2:
         for num in len(arg):
             if arg[num] < arg[num+1]:
                 return True
-            else: return False
+            if arg[num] = arg[num+1]:
+                return False
+            if arg[num] > arg[num+1]:
+                return False
 
 
         '''
