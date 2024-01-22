@@ -1,37 +1,32 @@
 class Person:
-    '''
-    Реализуйте класс для человека, поддерживающий историю изменений человеком своих фамилии и имени.
-    Считайте, что в каждый год может произойти не более одного изменения
-    фамилии и не более одного изменения имени.
-    При этом с течением времени могут открываться всё новые факты из прошлого человека,
-    поэтому года́ в последовательных вызовах методов *ChangeLastName* и *ChangeFirstName*
-    не обязаны возрастать.
-    Строка, возвращаемая методом *GetFullName*, должна содержать разделённые одним пробелом
-     имя и фамилию человека по состоянию на конец данного года.
-    Если к данному году не случилось ни одного изменения фамилии и имени, верните строку "Incognito".
-    Если к данному году случилось изменение фамилии,
-    но не было ни одного изменения имени, верните "last_name with unknown first name".
-    Если к данному году случилось изменение имени,
-    но не было ни одного изменения фамилии, верните "first_name with unknown last name".
-    '''
-
     def __init__(self):
-        self.name = []
+        self.first_name_changes = {}
+        self.last_name_changes = {}
 
     def ChangeFirstName(self, year, first_name):
-        self.name[0] = first_name
+        self.first_name_changes[year] = first_name
 
     def ChangeLastName(self, year, last_name):
-            self.name[1] = last_name
+        self.last_name_changes[year] = last_name
 
     def GetFullName(self, year):
-        if self.name == '':
-            return f"Incognito, {year}"
-        if self.name[0] == '':
-            return f"last_name with unknown first name, {year}"
-        if self.name[1] == '':
-            return f"first_name with unknown last name, {year}"
+        first_name = self.find_latest_change(year, self.first_name_changes)
+        last_name = self.find_latest_change(year, self.last_name_changes)
 
+        if first_name is None and last_name is None:
+            return "Incognito"
+        elif first_name is None:
+            return f"{last_name} with unknown first name"
+        elif last_name is None:
+            return f"{first_name} with unknown last name"
+        else:
+            return f"{first_name} {last_name}"
 
-
-
+    def find_latest_change(self, year, changes):
+        latest_change = None
+        for change_year in changes:
+            if change_year <= year:
+                latest_change = changes[change_year]
+            else:
+                break
+        return latest_change
