@@ -19,27 +19,9 @@ class Person:
         self.name = []
 
     def ChangeFirstName(self, year, first_name):
-        while (True):
-            try:
-                year = int(input())
-            except ValueError:
-                print('Введите число')
-
-            if type(year) == int:
-                break
-
-            self.name[0] = first_name
+        self.name[0] = first_name
 
     def ChangeLastName(self, year, last_name):
-        while (True):
-            try:
-                year = int(input())
-            except ValueError:
-                print('Введите число')
-
-            if type(year) == int:
-                break
-
             self.name[1] = last_name
 
     def GetFullName(self, year):
