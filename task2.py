@@ -8,3 +8,12 @@ class task2:
         (то есть каждый элемент больше предыдущего),
         то вернуть True, иначе False
         '''
+
+        for i in len(arg):
+            if i + 1 != len(arg):
+                if arg[i] < arg[i + 1]:
+                    res = True
+                else:
+                    res = False
+                    return res
+
