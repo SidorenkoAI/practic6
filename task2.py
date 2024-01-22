@@ -4,7 +4,7 @@ class task2:
     def greater(self, arg):
         vozr = list()
         for num in len(arg):
-            if arg[num] > arg[num+1]:
+            if arg[num] < arg[num+1]:
                 return True
             else: return False
 
