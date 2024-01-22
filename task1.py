@@ -1,8 +1,8 @@
-def __init__(self):
-    pass
+class task1:
+    def __init__(self):
+        pass
+    def giveEvenNumbers(self, arg):
 
-
-def giveEvenNumbers(self, arg):
     '''
     :param arg: список целых чисел
     :return: список четных чисел
@@ -11,4 +11,4 @@ def giveEvenNumbers(self, arg):
     for num in arg:
         if num % 2 == 0:
             chisl.append(num)
-    return chisl
+        return chisl
