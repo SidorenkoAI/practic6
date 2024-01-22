@@ -5,8 +5,8 @@ class task2:
         vozr = list()
         for num in len(arg):
             if arg[num] > arg[num+1]:
-                print("всё норм")
-            else: print("не то")
+                return True
+            else: return False
 
 
         '''
