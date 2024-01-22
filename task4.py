@@ -8,4 +8,4 @@ def PalindromeFilter(arg, minLength):
     for n in palind:
         if len(n) >= minLength:
             palindmin.append(n)
-    print(palindmin)
+    return palindmin
