@@ -11,3 +11,4 @@ class task2:
                     IsUp = False
                     return IsUp
         return IsUp
+print(task2.greater([1, 2, 3, 4, 5]))
