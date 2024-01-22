@@ -14,23 +14,42 @@ class Person:
     Если к данному году случилось изменение имени,
     но не было ни одного изменения фамилии, верните "first_name with unknown last name".
     '''
+
     def __init__(self):
-        self.name = #подумать, какая структура для хранения данных лучше подойдет
+        self.name = []
 
     def ChangeFirstName(self, year, first_name):
-    '''
-    добавить факт изменения имени на first_name в год year
-    '''
+        while (True):
+            try:
+                year = int(input())
+            except ValueError:
+                print('Введите число')
+
+            if type(year) == int:
+                break
+
+            self.name[0] = first_name
 
     def ChangeLastName(self, year, last_name):
-    '''
-    добавить факт изменения фамилии на last_name в год year
-    '''
+        while (True):
+            try:
+                year = int(input())
+            except ValueError:
+                print('Введите число')
+
+            if type(year) == int:
+                break
+
+            self.name[1] = last_name
 
     def GetFullName(self, year):
-  '''
-    получить имя и фамилию по состоянию на конец года year
-    '''
+        if self.name == '':
+            print(f"Incognito, {year}")
+        if self.name[0] == '':
+            print(f"last_name with unknown first name, {year}")
+        if self.name[1] == '':
+            print(f"first_name with unknown last name, {year}")
+
 
 
 
