@@ -1,0 +1,15 @@
+class Person:
+  def __init__(self):
+   self.name = [1,2,3,4,5,6,7,8]
+  def ChangeFirstName(self, year, first_name):
+   year = int(input())
+   first_name = str(input())
+   print(year)
+   print(first_name)
+  def ChangeLastName(self, year, last_name):
+   year = year
+   last_name = str(input())
+   print(last_name) 
+  
+  
+print(Person)
